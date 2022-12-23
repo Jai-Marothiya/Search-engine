@@ -20,11 +20,15 @@ class App extends React.Component {
     let links = [];
     let count=0;
     let reg = new RegExp(value);
-    for(let j=0;j<data.length,count<8;j++){
+    for(let j=0;j<data.length;j++){
       if(reg.test(data[j])){
         links[count]=data[j];
         count++;
       } 
+
+      if(count>7){
+        break;
+      }
     }
 
     this.setState({
