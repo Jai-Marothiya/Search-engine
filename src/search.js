@@ -10,7 +10,7 @@ class Row extends React.Component{
             i++;
         }
 
-        value=value.substr(0,i);
+        value=value.substr(0,30);
         
         return(
             <li key={this.props.id} id={this.props.id}>
