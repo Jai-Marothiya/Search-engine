@@ -121,7 +121,7 @@ body {
   height: 1rem;
 }
 
-@media only screen and (min-width: 370px) {
+@media only screen and (min-width: 280px) {
   /* For tablets: */
   .App {
     width: 88%;
