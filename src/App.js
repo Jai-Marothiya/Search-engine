@@ -10,58 +10,56 @@ class App extends React.Component {
       items: this.props.data.slice(0,8),
       input:"",
       display:"none",
-      search:[],
+      search:"",
     };
     this.handleOnChange = this.handleOnChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleOnChange(e){
-    const value = e.target.value;
     const data = this.state.data;
     let links = [];
+    this.setState({
+      input:e.target.value,
+      items:links,
+    })
+    const value = e.target.value;
     let count=0;
     let reg = new RegExp(value);
-    this.setState({
-      search:e.target,
-    });
 
-    data.forEach((ele) => {
-      if(reg.test(ele) && count<8){
-        links[count]=ele;
+    for(let j=0;j<data.length;j++){
+      if(reg.test(data[j]) && count<8){
+        links[count]=data[j];
         count++;
       } 
-    });
-    this.setState({
-      input: value,
-      items: [...links],
-    })
+    }
   }
 
   handleClick(e){
-
-    
-
+    this.setState({
+      search:e.target,
+    });
   }
-  
 
-  
   render(){
+
     window.addEventListener("click",(event)=>{
-        if(event.target===this.state.search){
-          this.setState({
-          display:block,
-          });
-        }else{
-          this.setState({
-            display:none,
-          });
-        }
+      console.log(event.target);
+      console.log(this.state.search);
+      if(event.target===this.state.search){
+        this.setState({
+          display:"block",
+        });
+      }else{
+        this.setState({
+          display:"none",
+        });
+      }
     });
     
     return (
       <div className="App">
-        <header>Get Set GO</header>
+        <header><span style={{color:"blue"}}>Get</span><span style={{color:"green"}}>Set</span><span style={{color:"red"}}>Go</span></header>
         <div>
           <span>
             <input type="text" name="" id="" placeholder="Type a URL...." value={this.state.input} onChange={this.handleOnChange} onClick={this.handleClick}/>

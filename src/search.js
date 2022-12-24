@@ -3,11 +3,20 @@ import arrow from "./images/arrow.png"
 
 class Row extends React.Component{
     render(){
+        let value = this.props.item.substr(8);
+        let i=0;
+
+        while(value[i]!=='/'){
+            i++;
+        }
+
+        value=value.substr(0,i);
+        
         return(
             <li key={this.props.id} id={this.props.id}>
                 <a href={this.props.item} key={this.props.id} target="_blank" rel="noreferrer">
                     <img src={arrow} alt="" />
-                    {this.props.item.substr(8,20)}
+                    {value}
                 </a>
             </li>
          )
@@ -27,7 +36,7 @@ class Search extends React.Component{
             // console.log(i);
         });
         return(
-            <ul>{rows}</ul>    
+            <ul style={{display:this.props.display}}>{rows}</ul>    
         );
     }
 }

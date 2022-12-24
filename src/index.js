@@ -9,7 +9,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 const links = [
   "https://m.youtube.com/watch?v=wdP_UDSsuro",
   "https://tidbyt.com/products/tidbyt",
-  "http://www.chronocentric.com/watches/selecting.html",
+  "https://www.chronocentric.com/watches/selecting.html",
   "https://twitter.com/ikeadrift/status/1604198542360432642",
   "https://twitter.com/storybookjs/status/1603773143201775618?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Etweet",
   "https://web.dev/learn/pwa/update/",
