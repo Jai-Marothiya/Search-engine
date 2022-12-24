@@ -17,9 +17,13 @@ class App extends React.Component {
 
   handleOnChange(e){
     const data = this.props.data;
+    let insensetiveData = data;
+    insensetiveData.forEach(data => {
+      data.toString().toLowerCase();
+    });
     let links = [];
     this.setState({
-      input:e.target.value,
+      input:e.target.value.toString().toLowerCase(),
       items:links,
     })
     const value = e.target.value;
@@ -27,7 +31,7 @@ class App extends React.Component {
     let reg = new RegExp(value);
 
     for(let j=0;j<data.length;j++){
-      if(reg.test(data[j]) && count<8){
+      if(reg.test(insensetiveData[j]) && count<8){
         links[count]=data[j];
         count++;
       } 
