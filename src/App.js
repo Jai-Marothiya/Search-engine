@@ -109,7 +109,7 @@ class App extends React.Component {
             <input type="text" name="" id="" placeholder="Type a URL...." value={this.state.input} onChange={this.handleOnChange} onClick={this.handleClick}/>
           </span>
           <Search items={this.state.items} display={this.state.display} result={this.state.result} moreitems={this.state.moreitems}></Search>
-          <span className="results" style={{display:this.state.display}} onClick={this.handleResultClick}>{this.state.result} more items</span>
+          <span className="results" style={{display:this.state.display}} onClick={this.handleResultClick}>{this.state.result} more results</span>
         </div>
       </div>
     )
