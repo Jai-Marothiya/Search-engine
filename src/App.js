@@ -67,14 +67,19 @@ class App extends React.Component {
       resultClick:e.target,
     });
 
-    if(this.state.items.length<=8 && this.state.result>0){
+    if(this.state.result===887){
       this.setState({
-        items:this.state.moreitems,
+        items:this.props.data,
       })
+    }
+    else if(this.state.items.length<=8 && this.state.result>0){
+        this.setState({
+          items:this.state.items.concat(this.state.moreitems),
+        })
     }else{
-      this.setState({
-        items:this.state.items.slice(0,8),
-      })
+        this.setState({
+          items:this.state.items.slice(0,8),
+        })
     }
   }
 

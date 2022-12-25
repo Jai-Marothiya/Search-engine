@@ -24,7 +24,16 @@ class Row extends React.Component{
             i++;
         }
 
-        value=value.substr(0,30);
+        let width =window.innerWidth;
+        console.log(width);
+        console.log(typeof(width));
+        if(width<768){
+            value=value.substr(0,30);
+        }else{
+            value=value.substr(0,50);
+        }
+        
+        // value=value.substr(0,30);
         
         return(
             <li className='list'>
