@@ -103,7 +103,7 @@ class App extends React.Component {
     
     return (
       <div className="App">
-        <header><span style={{color:"blue"}}>Get</span> <span style={{color:"green"}}>Set</span> <span style={{color:"red"}}>Go</span></header>
+        <header><span style={{color:"#e70ac5"}}>Get</span> <span style={{color:"green"}}>Set</span> <span style={{color:"red"}}>Go</span></header>
         <div>
           <span className='input'>
             <input type="text" name="" id="" placeholder="Type a URL...." value={this.state.input} onChange={this.handleOnChange} onClick={this.handleClick}/>
